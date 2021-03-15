@@ -14,9 +14,6 @@ let nomeOK1 = false
 let emailOk1 = false
 let areaDeTextoOk1 = false
 
-
-
-
 function validaNome() {
 
     if (nome.value.length > 2) {
@@ -28,25 +25,19 @@ function validaNome() {
 
 function validaEmail() {
 
-
-
     if(!(email.value.indexOf('@') == -1 || email.value.indexOf('.') == -1)) {
-
         emailOk = true
     } else{
 
         emailOk = false
     }
 }
-
 function validaAreaDeTexto() {
 
- 
     if (areaDeTexto.value.length >= 250) {
 
        txtAssunto.style.display = 'block'
     } else {
-
         areaDeTextoOk = true
     }
  }
