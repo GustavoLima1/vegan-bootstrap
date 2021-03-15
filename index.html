@@ -4,7 +4,6 @@
     <!-- Meta tags Obrigatórias -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
@@ -14,7 +13,7 @@
 
     <!-- MENU -->
     <nav class="navbar  fixed-top navbar-expand-lg navbar-dark bg-success w-100">
-        <a class="navbar-brand" href="#"><img src="/img/brocolis.png" alt="logo" style="width: 5vh"></a>
+        <a class="navbar-brand" href="#"><img src="img/brocolis.png" alt="logo" style="width: 5vh"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -27,18 +26,57 @@
               <a class="nav-link" href="#Destaque">Destaques</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#Documentarios">Documentários</a>
+              <a class="nav-link" href="#Motivacoes">Motivações</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="#Motivacoes">Motivações</a>
+              <a class="nav-link " href="#Documentarios">Documentários</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="#Contato">Contato</a>
+                <a class="nav-link " href="#" data-toggle="modal" data-target="#modal">Contato</a>
               </li>
           </ul>
         </div>
       </nav>
     <!--/ MENU -->
+
+   <!-- Modal -->
+<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="TituloModalCentralizado">Entre em contato</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="nome">Primeiro nome</label>
+            <input type="text" class="form-control" id="nome" placeholder="Nome" required onkeyup="validaNome()">
+          </div>
+         <div class="form-group">
+           <label for="email">E-mail</label>
+           <input type="email" class="form-control" id="email" placeholder="nome@exemplo.com" onkeyup="validaEmail()">
+         </div>
+         <div class="form-group">
+           <label for="areaDeTexto">Descrição</label>
+           <textarea class="form-control" id="areaDeTexto" rows="3" aria-describedby="textHelp" required onkeyup="validaAreaDeTexto()"></textarea>
+           <small id="textHelp" class="text-muted">
+            <small id="textHelp" class="text-muted">
+              Deve ter até 250 caracteres.
+            </small>
+          </div>
+          <div class="form-group d-flex justify-content-end">
+            <button  class="btn btn-outline-success" onclick="enviar()" >Enviar</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+  <!-- /Modal -->
     
     <div class="container">
     <!-- CAROUSEL -->
@@ -50,24 +88,24 @@
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img class="d-block w-100" src="/img/vegan.jpg" alt="Primeiro Slide">
+            <img class="d-block w-100" src="img/vegan.jpg" alt="Primeiro Slide">
             <div class="carousel-caption d-none d-md-block ">
                 <h2 class="font-weight-bold "> O que é veganismo? </h2>
-                <p class="font-weight-bold">Conheça mais sobre o veganismo</p>
+                <p class="font-weight-bold"> </p>
               </div>
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" src="/img/caro-vegan.jpg" alt="Segundo Slide">
+            <img class="d-block w-100" src="img/caro-vegan.jpg" alt="Segundo Slide">
             <div class="carousel-caption d-none d-md-block">
-                <h2 class="font-weight-bold"> Ser vegano é caro? </h2>
-                <p class="font-weight-bold"> Saiba como se alimentar melhor e ainda economizar</p>
+                <h2 class="font-weight-bold"> </h2>
+                <p class="font-weight-bold"> </p>
               </div>
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" src="/img/a-vegan-world.jpg" alt="Terceiro Slide">
+            <img class="d-block w-100" src="img/a-vegan-world.jpg" alt="Terceiro Slide">
             <div class="carousel-caption d-none d-md-block">
                 <h2 class="font-weight-bold"> Um mundo mais consciente </h2>
-                <p class="font-weight-bold">Conheça as mudanças que estão ocorrendo e como você pode ajudar</p>
+                <p class="font-weight-bold"> .</p>
               </div>
           </div>
         </div>
@@ -87,56 +125,58 @@
         <div class="container ">
           <h1 class="display-4 font-weight-bold text-warning">O que é o veganismo?</h1>
         </div>
-          <div class="d-flex">
+          <div class="d-flex row">
           <p class="lead col-md-7  align-items-center">Ser vegano é uma filosofia de vida que tem como princípio respeitar os animais e seus sentimentos, escolhendo não consumir laticínios, ovos ou quaisquer outros produtos de origem animal, além de abster-se de carne.</p>
-          <img src="/img/Desenho-Vaca-PNG.png" alt="vaquinha" class="lead col-md-3 align-items-center" >
-        
-        
+          <img src="img/Desenho-Vaca-PNG.png" alt="vaquinha" class=" ead col-md-3 align-items-center" >
         </div>
       </div>
      <!-- /jumbotron -->
-     <!-- jumbotron 2-->
+           
+      <!-- motivações -->
+      <div class="jumbotron jumbotron mb-5", id="Motivacoes">
+        <div class="container " id="Motivacoes">
+          <h1 class="display-4 font-weight-bold text-success mb-5">Motivações</h1>
+        </div>
 
-     <div class="jumbotron jumbotron mt-5 mb-5">
-        <div class="container " id="Documentarios">
-          <h1 class="display-4 font-weight-bold text-success mb-5">Documentários</h1>
-        </div>
-        <!-- /jumbotron 2-->
-     <!-- cards -->
-     <div class="card-deck" >
-        <div class="card">
-          <img class="card-img-top" src="/img/foodMatters.jpg" alt="Imagem de capa do card">
-          <div class="card-body">
-            <h5 class="card-title">FOOD MATTERS</h5>
-            <p class="card-text">O documentário relaciona a saúde da humanidade à alimentação. Nutricionistas e médicos mostram através de estudos que uma alimentação orgânica, vegetariana e de preferência crua é a forma mais saudável de se alimentar..</p>
+        <div class="card-deck" >
+            <div class="card">
+              <img class="card-img-top" src="img/vidas.jpg" alt="Imagem de capa do card">
+              <div class="card-body">
+                <h5 class="card-title">Salva vidas</h5>
+                <p class="card-text">Caso você tenha optado por esse estilo de vida, tenha a certeza de que está fazendo a sua parte. O professor de engenharia elétrica, Harish Sethu, de Universidade Drexel, na Filadélfia calculou que um vegetariano chega a salvar de 371 a 582 animais por ano </p>
+
+                </div>
+
+            </div>
+            <div class="card">
+              <img class="card-img-top" src="img/saude.png" alt="Imagem de capa do card">
+              <div class="card-body">
+                <h5 class="card-title">Saude</h5>
+                <p class="card-text">De acordo com o Ministério da Saúde, a dieta vegana é uma das mais saudáveis existentes, isso porque é rica em fibras e em proteínas</p>
+                <p>Mais recentemente, a ciência também provou que essa dieta ajuda no controle da diabetes tipo 2, na prevenção de hipertensão e, até mesmo, em diminuir as chances de apresentar alguns tipos de câncer.</p>
+              </div>
+            </div>
+            <div class="card">
+              <img class="card-img-top" src="img/preservação.jpg" alt="Imagem de capa do card">
+              <div class="card-body">
+                <h5 class="card-title">Meio Ambiente</h5>
+                <p> 75% das terras agricultáveis do planeta são usadas para pastagem e produção de ração para a pecuária. Muitas dessas áreas são resultado de desmatamento de florestas nativas. No Brasil, segundo a ONU, mais de 80% do desmatamento entre 1990 e 2005 foi provocado para consumo de carne.</p>
+                <p class="card-text">A pecuária é responsável por 15% do total das emissões de gases de efeito estufa, superando até mesmo as emissões causadas pelo transporte</p>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="card">
-          <img class="card-img-top" src="/img/foodChoices.jpg" alt="Imagem de capa do card">
-          <div class="card-body">
-            <h5 class="card-title">FOOD CHOICES (NETFLIX)</h5>
-            <p class="card-text">Esse filme mostra como nossas escolhas alimentares impactam o mundo, o clima e nossa saúde. É um documentário informativo, onde muitos mitos da nutrição vegetariana são esclarecidos. Várias pessoas, entre elas médicos, nutricionistas e atletas, dão seus depoimentos, contam suas experiências de vida e como tudo mudou depois que decidiram seguir uma dieta baseada em plantas.</p>
-          </div>
-        </div>
-        <div class="card">
-          <img class="card-img-top" src="/img/WhatTheHealth.jpg" alt="Imagem de capa do card">
-          <div class="card-body">
-            <h5 class="card-title">WHAT THE HEALTH (NETFLIX)</h5>
-            <p class="card-text">Dos mesmos diretores de Cowspiracy, What The Health mostra a ligação da indústria da carne com a indústria farmacêutica. O cineasta Kip Andersen descobre o segredo para prevenir e até reverter doenças crônicas, e investiga por que as principais organizações de saúde do país não querem que as pessoas saibam disso..</p>
-          </div>
-        </div>
       </div>
-     <!-- /cards -->
-    </div>
+     
+     
      <!-- texto e video -->
-     <div class="row mt-5">
+     <div class="row mt-10">
          <div class="col-md-6 ">
              <h3 class="text-warning">É caro ser vegano?</h3>
              <p>
                 O movimento como um todo é cercado por uma série de questionamentos e falácias. Além da famosa dúvida sobre as ausências nutricionais sem a ingestão de carne, muitos dizem que o veganismo é um movimento caro e elitista. Afinal, é caro ser vegano?
              </p>
              <p>
-                Para desmistificar essas falácias trouxemos o vídeo do Vegetari Rango 
+                Para desmistificar essas falácias trouxemos o vídeo do canal Viver de quê?
              </p>
 
          </div>
@@ -146,45 +186,43 @@
      </div>
 
       <!-- /texto e video -->
+      <!-- jumbotron 2-->
 
-      <!-- motivações -->
-      <div class="jumbotron jumbotron mt-5 mb-5">
-        <div class="container " id="Documentarios">
-          <h1 class="display-4 font-weight-bold text-success mb-5">Motivações</h1>
+      <div class="jumbotron jumbotron" id="Documentarios">
+        <div class="container " >
+          <h1 class="display-4 font-weight-bold text-success mb-5">Documentários</h1>
         </div>
+        <!-- /jumbotron 2-->
 
-        <div class="card-deck" >
-            <div class="card">
-              <img class="card-img-top" src="/img/vidas.jpg" alt="Imagem de capa do card">
-              <div class="card-body">
-                <h5 class="card-title">Salva vidas</h5>
-                <p class="card-text">Caso você tenha optado por esse estilo de vida, tenha a certeza de que está fazendo a sua parte. O professor de engenharia elétrica, Harish Sethu, de Universidade Drexel, na Filadélfia calculou que um vegetariano chega a salvar de 371 a 582 animais por ano </p>
-
-                </div>
-
-            </div>
-            <div class="card">
-              <img class="card-img-top" src="/img/saude.png" alt="Imagem de capa do card">
-              <div class="card-body">
-                <h5 class="card-title">Saude</h5>
-                <p class="card-text">De acordo com o Ministério da Saúde, a dieta vegana é uma das mais saudáveis existentes, isso porque é rica em fibras e em proteínas</p>
-                <p>Mais recentemente, a ciência também provou que essa dieta ajuda no controle da diabetes tipo 2, na prevenção de hipertensão e, até mesmo, em diminuir as chances de apresentar alguns tipos de câncer.</p>
-              </div>
-            </div>
-            <div class="card">
-              <img class="card-img-top" src="/img/preservação.jpg" alt="Imagem de capa do card">
-              <div class="card-body">
-                <h5 class="card-title">Meio Ambiente</h5>
-                <p class="card-text">A pecuária é responsável por 15% do total das emissões de gases de efeito estufa, superando até mesmo as emissões causadas pelo transporte</p>
-                <p>Pasmem: 75% das terras agricultáveis do planeta são usadas para pastagem e produção de ração para a pecuária. Muitas dessas áreas são resultado de desmatamento de florestas nativas. No Brasil, segundo a ONU, mais de 80% do desmatamento entre 1990 e 2005 foi provocado para consumo de carne.</p>
-              </div>
-            </div>
+      <!-- cards -->
+      <div class="card-deck" >
+        <div class="card">
+          <img class="card-img-top" src="img/foodMatters.jpg" alt="Imagem de capa do card">
+          <div class="card-body">
+            <h5 class="card-title">FOOD MATTERS</h5>
+            <p class="card-text">O documentário relaciona a saúde da humanidade à alimentação. Nutricionistas e médicos mostram através de estudos que uma alimentação orgânica, vegetariana e de preferência crua é a forma mais saudável de se alimentar..</p>
           </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="img/foodChoices.jpg" alt="Imagem de capa do card">
+          <div class="card-body">
+            <h5 class="card-title">FOOD CHOICES (NETFLIX)</h5>
+            <p class="card-text">Esse filme mostra como nossas escolhas alimentares impactam o mundo, o clima e nossa saúde. É um documentário informativo, onde muitos mitos da nutrição vegetariana são esclarecidos. Várias pessoas, entre elas médicos, nutricionistas e atletas, dão seus depoimentos, contam suas experiências de vida e como tudo mudou depois que decidiram seguir uma dieta baseada em plantas.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="img/WhatTheHealth.jpg" alt="Imagem de capa do card">
+          <div class="card-body">
+            <h5 class="card-title">WHAT THE HEALTH (NETFLIX)</h5>
+            <p class="card-text">Dos mesmos diretores de Cowspiracy, What The Health mostra a ligação da indústria da carne com a indústria farmacêutica. O cineasta Kip Andersen descobre o segredo para prevenir e até reverter doenças crônicas, e investiga por que as principais organizações de saúde do país não querem que as pessoas saibam disso..</p>
+          </div>
+        </div>
       </div>
-     
-      <!-- /motivações -->
-      <!--Formulário de contato-->
+      </div>
+      <!-- /cards -->
 
+
+      <!--Formulário de contato-->
     <div class="row mb-3 mt-5 bg-transparent" id="Contato">
         <div class="col-md-12">
           <h4 class="text-center text-success">
@@ -192,22 +230,27 @@
           </h4>
         </div>
       </div>
-  
       <div class="row d-flex align-items-center">
         <div class="col-md-6">
           <form>
             <div class="form-group">
-              <label for="email">E-mail</label>
-              <input type="email" class="form-control" id="email" placeholder="nome@exemplo.com">
-            </div>
-           
+              <label for="validationDefault01">Primeiro nome</label>
+             <input type="text" class="form-control" id="nome1" placeholder="Nome" required onkeyup="validaNome1()">
+             </div>
             <div class="form-group">
-              <label for="AreaDeTexto">Descrição</label>
-              <textarea class="form-control" id="AreaDeTexto" rows="3"></textarea>
+              <label for="email">E-mail</label>
+              <input type="email" class="form-control" id="email1" placeholder="nome@exemplo.com" onkeyup="validaEmail1()">
             </div>
-  
+           <div class="txtEmail"></div>
+            <div class="form-group">
+              <label for="areaDeTexto">Descrição</label>
+              <textarea class="form-control" id="areaDeTexto1" rows="3" aria-describedby="textHelp" required onkeyup="validaAreaDeTexto1()"></textarea>
+              <small id="textHelp" class="text-muted">
+                Deve ter entre 10 e 250 caracteres.
+              </small>
+            </div>
             <div class="form-group d-flex justify-content-end">
-              <button class="btn btn-outline-success">Enviar</button>
+              <button onclick="enviar1()" class="btn btn-outline-success"  >Enviar</button>
             </div>
           </form>
         </div>
@@ -217,11 +260,6 @@
         </div>
       </div>
       
-    
-
-  
-      
-  
       <!--/Formulário de contato-->
       
       <style>
@@ -246,6 +284,9 @@
               <a href="https://www.linkedin.com/in/gustavo-lima-ab0/" target="_blank" class="p-3">
                 <img class="tm-social" src="img/linkedin.png" alt="Logo do Linkedin">
               </a>
+              <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank" class="p-3">
+                <img class="tm-social" src="img/gmail.png" alt="Logo do gmail">
+              </a>
           </div>
         </div>
   
@@ -265,5 +306,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="/js/script.js"></script>
   </body>
 </html>
